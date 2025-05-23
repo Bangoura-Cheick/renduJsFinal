@@ -45,12 +45,12 @@ PhrasePromesses.forEach(phrases => {
   plats.forEach(valeurs => {
 
     let sectionPlats=document.getElementById("plats");
-    // Appeler les élements présent dans le Html 
+    //créer les élements Html en Js 
     let card = document.createElement("div");
     let imagePlats= document.createElement("img");
     let titrePlat= document.createElement("h3");
     let paragraphePlat= document.createElement("p");
-   // mettre les valeurs des élements crées
+   // mettre les valeurs dans les élements crées
     imagePlats.src= valeurs["image-url"];
     titrePlat.textContent= valeurs.nom;
     paragraphePlat.textContent= valeurs.desc;
@@ -60,7 +60,35 @@ PhrasePromesses.forEach(phrases => {
     card.appendChild(paragraphePlat);
     sectionPlats.appendChild(card);
     // Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image
+// Niveau 4 – Afficher les témoignages
+// Pour chaque témoignage dans les données JSON
+   let temoignages = data.temoignages
+   console.log(temoignages);
+   temoignages.forEach(valeur => {
+   let sectionTemoignages=document.getElementById("temoignages");
+// créer dynamiquement une div contenant le prénom, type d'experiences et le commentaire.
+   let attest = document.createElement("div");
+   let prenom = document.createElement("h3");
+   let typeDexperience= document.createElement("h4");
+   let commentaire= document.createElement("p");
+   let note= document.createElement("label");
+// mettre les valeurs dans les élements crées
+     prenom.textContent=data.prenom;
+     typeDexperience.textContent=valeur.typeDexperience;
+     commentaire.textContent=valeur.commentaire;
+     note.ariaValueText=data.note;
+// integrer les elements dans leur parentN
+    attest.appendChild(prenom);
+    attest.appendChild(typeDexperience);
+    attest.appendChild(commentaire);
+    sectionTemoignages.appendChild(attest);
 
+   });
+   
+
+
+
+// Ajoute ces témoignages sous les activités dans la page
   });
 
 
