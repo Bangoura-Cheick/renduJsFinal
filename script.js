@@ -79,20 +79,26 @@ PhrasePromesses.forEach(phrases => {
      note.textContent=valeur.note + "/5";
      
      
-// integrer les elements dans leur parentN
+// integrer les elements dans leur parent
     attest.appendChild(prenom);
     attest.appendChild(typeDexperience);
     attest.appendChild(commentaire);
     attest.appendChild(note);
     sectionTemoignages.appendChild(attest);
-
+});
 //  Niveau 5 (optionnel) – Ajouter une carte interactive
 // Ajoute une carte interactive à la page à l’aide de la bibliothèque Leaflet.js.
 // Utilise les coordonnées fournies dans les données JSON pour centrer la carte et y ajouter un fond de carte interactif
-
+     var map = L.map('map').setView([45.7379328, 4.8850145], 13);
   
-
-   });
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+    var marker = L.marker([45.7379328, 4.8850145 ]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+   
    
 
 
