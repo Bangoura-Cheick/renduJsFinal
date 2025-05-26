@@ -34,7 +34,7 @@ let PhrasePromesses = data.promessesClient;
 
 PhrasePromesses.forEach(phrases => {
   let promesses = document.getElementById("promesses");
-  let paragraphe = document.createElement("p");
+  let paragraphe = document.createElement("h3");
   paragraphe.textContent= phrases;
   promesses.appendChild(paragraphe);
 });
@@ -47,6 +47,9 @@ PhrasePromesses.forEach(phrases => {
     let sectionPlats=document.getElementById("plats");
     //créer les élements Html en Js 
     let card = document.createElement("div");
+
+    card.classList.add("card");
+    
     let imagePlats= document.createElement("img");
     let titrePlat= document.createElement("h3");
     let paragraphePlat= document.createElement("p");
@@ -62,8 +65,9 @@ PhrasePromesses.forEach(phrases => {
     // Affiche ces informations dans une section dédiée, avec une carte pour chaque activité si les données contiennent un lien vers une image
 // Niveau 4 – Afficher les témoignages
 // Pour chaque témoignage dans les données JSON
+  });
    let temoignages = data.temoignages
-   console.log(temoignages);
+
    temoignages.forEach(valeur => {
    let sectionTemoignages=document.getElementById("temoignages");
 // créer dynamiquement une div contenant le prénom, type d'experiences et le commentaire.
@@ -77,6 +81,9 @@ PhrasePromesses.forEach(phrases => {
      typeDexperience.textContent=valeur.typeDexperience;
      commentaire.textContent=valeur.commentaire;
      note.textContent=valeur.note + "/5";
+
+     attest.classList.add("cardTemoignage");
+     console.log(valeur);
      
      
 // integrer les elements dans leur parent
@@ -89,22 +96,12 @@ PhrasePromesses.forEach(phrases => {
 //  Niveau 5 (optionnel) – Ajouter une carte interactive
 // Ajoute une carte interactive à la page à l’aide de la bibliothèque Leaflet.js.
 // Utilise les coordonnées fournies dans les données JSON pour centrer la carte et y ajouter un fond de carte interactif
-     var map = L.map('map').setView([45.7379328, 4.8850145], 13);
-  
-     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(map);
-    
-    var marker = L.marker([45.7379328, 4.8850145 ]).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am located here.").openPopup();
-   
    
 
 
 
 // Ajoute ces témoignages sous les activités dans la page
-  });
+
 
 
   })
@@ -113,4 +110,16 @@ PhrasePromesses.forEach(phrases => {
     console.error('Erreur lors du fetch :', error);
   });
 
+
+
+     let map = L.map('map').setView([45.7379328, 4.8850145], 13);
+  
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+    let marker = L.marker([45.7379328, 4.8850145 ]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am located here.").openPopup();
+   
 
