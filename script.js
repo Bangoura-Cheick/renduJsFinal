@@ -69,19 +69,28 @@ PhrasePromesses.forEach(phrases => {
 // créer dynamiquement une div contenant le prénom, type d'experiences et le commentaire.
    let attest = document.createElement("div");
    let prenom = document.createElement("h3");
-   let typeDexperience= document.createElement("h4");
-   let commentaire= document.createElement("p");
-   let note= document.createElement("input");
+   let typeDexperience = document.createElement("h4");
+   let commentaire = document.createElement("p");
+   let note = document.createElement("h4");
 // mettre les valeurs dans les élements crées
      prenom.textContent=valeur.prenom;
      typeDexperience.textContent=valeur.typeDexperience;
      commentaire.textContent=valeur.commentaire;
-     note.input=valeur.note;
+     note.textContent=valeur.note + "/5";
+     
+     
 // integrer les elements dans leur parentN
     attest.appendChild(prenom);
     attest.appendChild(typeDexperience);
     attest.appendChild(commentaire);
+    attest.appendChild(note);
     sectionTemoignages.appendChild(attest);
+
+//  Niveau 5 (optionnel) – Ajouter une carte interactive
+// Ajoute une carte interactive à la page à l’aide de la bibliothèque Leaflet.js.
+// Utilise les coordonnées fournies dans les données JSON pour centrer la carte et y ajouter un fond de carte interactif
+
+  
 
    });
    
