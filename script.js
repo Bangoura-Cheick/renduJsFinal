@@ -71,12 +71,12 @@ PhrasePromesses.forEach(phrases => {
    let prenom = document.createElement("h3");
    let typeDexperience= document.createElement("h4");
    let commentaire= document.createElement("p");
-   let note= document.createElement("number");
+   let note= document.createElement("input");
 // mettre les valeurs dans les élements crées
      prenom.textContent=valeur.prenom;
      typeDexperience.textContent=valeur.typeDexperience;
      commentaire.textContent=valeur.commentaire;
-     note.number=valeur.note;
+     note.input=valeur.note;
 // integrer les elements dans leur parentN
     attest.appendChild(prenom);
     attest.appendChild(typeDexperience);
