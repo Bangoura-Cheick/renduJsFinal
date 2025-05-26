@@ -97,7 +97,7 @@ PhrasePromesses.forEach(phrases => {
     }).addTo(map);
     
     var marker = L.marker([45.7379328, 4.8850145 ]).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    marker.bindPopup("<b>Hello world!</b><br>I am located here.").openPopup();
    
    
 
